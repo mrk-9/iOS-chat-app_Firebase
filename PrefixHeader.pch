@@ -1,0 +1,189 @@
+//
+//  PrefixHeader.pch
+//  Layovr
+//
+//  Created by Daniel Drescher on 03/06/16.
+//  Copyright © 2016 griebel. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "CustomPlaceholderTextField.h"
+#import "NSString+ValidText.h"
+//#import <Firebase/Firebase.h>
+#import "Utils.h"
+#import "ProgressHUD.h"
+#import "DataService.h"
+#import "UserInfo.h"
+#import "KLCPopup.h"
+#import "MyAlert.h"
+#import "FXBlurView.h"
+#import "PAImageView.h"
+#import "MIBadgeButton.h"
+#import "TTRangeSlider.h"
+@import Firebase;
+
+#define ISFIRSTLAUNCHED @"isFristLaunched"
+#define TOPBAR_HEIGHT @"top bar height"
+
+#define DocumentDirectory [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]
+
+#define EMPTY_STRING @""
+
+#define USERNAME @"username"
+#define EMAIL @"email"
+#define PASSWORD @"password"//-
+#define USERID @"uid"//-
+#define PHOTO @"photo"// Avatar URL in Firebase
+#define GENDER @"gender"
+
+#define MEET_OPTION @"meet option" // 1: m -> w       9, 11, 12, 14
+                                   // 2: m -> m       2, 4, 5, 7
+                                   // 3: m -> t       16, 18, 19, 21
+                                   // 4: m -> m/w     2, 4, 5, 7, 9, 11, 12, 14
+                                   // 5: m -> m/t     2, 4, 5, 7, 16, 18, 19, 21
+                                   // 6: m -> w/t     9, 11, 12, 14, 16, 18, 19, 21
+                                   // 7: m -> m/w/t   2, 4, 5, 7, 9, 11, 12, 14, 16, 18, 19, 21
+
+                                    // 8: w -> w      8, 11, 13, 14
+                                    // 9: w -> m      1, 4, 6, 7
+                                    // 10: w -> t     15, 18, 20, 21
+                                    // 11: w -> m/w   1, 4, 6, 7, 8, 11, 13, 14
+                                    // 12: w -> m/t   1, 4, 6, 7, 15, 18, 20, 21
+                                    // 13: w -> w/t   8, 11, 13, 14, 15, 18, 20, 21
+                                    // 14: w -> m/w/t 1, 4, 6, 7, 8, 11, 13, 14, 15, 18, 20, 21
+
+                                    // 15: t -> w     10, 12, 13, 14
+                                    // 16: t -> m     3, 5, 6, 7
+                                    // 17: t -> t     17, 19, 20, 21
+                                    // 18: t -> m/w   3, 5, 6, 7, 10, 12, 13, 14
+                                    // 19: t -> m/t   3, 5, 6, 7, 17, 19, 20, 21
+                                    // 20: t -> w/t   10, 12, 13, 14, 17, 19, 20, 21
+                                    // 21: t -> m/w/t 3, 5, 6, 7, 10, 12, 13, 14, 17, 19, 20, 21
+//-------------------------------------
+                                   // 0: unselected
+
+#define NETWORK_OPTION @"network option" // 1: selected 0: unselected
+//#define ISMEET @"isMeet" //1: Meet, 0: Network
+//#define ISMEN @"isMen" //1: Men, 0: Men/Women, 2: Women
+
+#pragma mark - User Class
+
+#define USERS_REF @"users" //-- class
+
+#define AGE @"age"
+#define AGE_MIN @"age min"
+#define AGE_MAX @"age max"
+#define CURRENT_CITY @"current city"
+#define FIRST_CITY @"first city"
+#define SECOND_CITY @"second city"
+#define THIRD_CITY @"third city"
+#define HOME_CITY @"home city"
+#define OCCUPATION @"occupation"
+#define COLLEGE @"college"
+#define FIRST_INTEREST @"first interest"
+#define SECOND_INTEREST @"second interest"
+#define THIRD_INTEREST @"third interest"
+#define BAND @"band"
+#define BOOK @"book"
+#define MOVIE @"movie"
+#define PLACE @"place"
+//#define LAST_MESSAGE @"last message"
+#define DEPART_TIME @"depart time" // time stamp
+#define LATITUDE @"latitude" // Geolocation Latitude
+#define LONGITUDE @"longitude" // Geolocation Longitude
+#define ONESIGNAL_USERID @"One Signal User ID"
+
+#define DEPARTED_FLAG @"is departed"
+
+#pragma mark - Message Class
+
+#define MESSAGES_REF @"messages"//-- class
+
+#pragma mark - Block List Class
+
+#define BLOCKLIST_REF @"block_list"//-- class
+
+#pragma mark - Contacts Class
+
+#define CONTACTS_REF @"contacts"//-- class
+
+#pragma mark - Notifications Class
+
+#define NOTIFICATIONS_REF @"notifications"//-- class
+
+//#define BADGENUMBER @"badge number"
+
+#pragma mark -
+
+// Peer Profile Image status
+#define STATUS @"status"
+#define LAST_MESSAGE @"last message"
+
+// is downloaded user data from Firebase
+#define ISDOWNLOADED_USERDATA @"is downloaded user data"
+
+// check the status from camera
+#define ISUSEFROMCAMERA @"use from camera"
+
+#define AVATARIMAGE @"avatar image"// Image Data
+#define AVATAR_ISEXISTED @"avatar is existed"// Flag whether the avatar is existed or not
+#define AVATAR_ISDOWNLOADED @"avatar is downloaded"
+
+//Badge Number
+#define BADGENUMBER @"badge number"
+
+// Firebase Ref
+#define FIREBASE_URL         @"https://layovr-stephen.firebaseio.com"
+#define FIREBASE_MESSAGE_URL         @"https://layovr-stephen.firebaseio.com/messages"
+#define FIREBASE_USERS_URL         @"https://layovr-stephen.firebaseio.com/users"
+
+#define SENDER_ID @"691369685865"
+#define MESSAGE_ID @"message identifier"
+
+#define FIR_STORAGEURL @"gs://layovr-stephen.appspot.com/"
+#define AVATARS @"avatars"// Avatar Directoy in Firebase
+
+#define ERROR_INVALID_PASSWORD @"INVALID_PASSWORD"
+#define ERROR_INVALID_EMAIL @"INVALID_EMAIL"
+#define ERROR_INVALID_USER @"INVALID_USER"
+
+// One Signal
+#define ONESIGNAL_APPID @"8109d605-a1b4-4490-a56e-e3f45cbcbf2b"
+
+#define UPDATEDCONTACTLIST_NOTIFICATION @"Updated Contact List"
+#define UPDATEDNOTIFICATIONS_NOTIFICATION @"Updated Notifications"
+
+#define ISSHOWED_MESSAGEVIEWCONTROLLER @"is showed MessageViewController"
+#define ISSHOWED_CHATVIEWCONTROLLER @"is showed ChatViewController"
+
+#define CHAT_PEERUID @"chat peeer uid"
+
+//typedef NS_ENUM(NSInteger, FieldTag) {
+//    FieldTagHorizontalLayout = 1001,
+//    FieldTagVerticalLayout,
+//    FieldTagMaskType,
+//    FieldTagShowType,
+//    FieldTagDismissType,
+//    FieldTagBackgroundDismiss,
+//    FieldTagContentDismiss,
+//    FieldTagTimedDismiss,
+//};
+
+// Blur effect status
+typedef NS_ENUM(NSInteger, BlurTag) {
+    BlurLevel1 = 0,
+    BlurLevel2,
+    BlurLevel3,
+    BlurLevel4,
+    BlurLevel5
+};
+
+
+#endif /* PrefixHeader_pch */
